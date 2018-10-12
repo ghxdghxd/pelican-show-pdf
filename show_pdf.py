@@ -16,8 +16,11 @@ def show_pdf(pdf_elem, curpath, linefeed='\n', delim=',', classes=[''], limit=5)
 
     id = [id for id in words if "id" in id][0].split("id=")[1]
     src = [src for src in words if "src" in src][0].split("src=")[1]
-    
-    pdf_string = '<embed id=' + id + ' src=' + src + ' type="application/pdf" width = "100%" height = "600px" internalinstanceid = "17">'
+
+    pdf_string = '<embed id=' + id + ' src=' + src + ' type="application/pdf"'
+    pdf_string = pdf_string + ' width = "80%" height = "600px" internalinstanceid = "17"'
+    pdf_string = pdf_string + \
+        ' style = "margin: 10px auto; display: flex; justify-content: center; align-items: center; border: 1px solid;">'
 
     return pdf_string
 
